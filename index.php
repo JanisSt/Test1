@@ -13,14 +13,14 @@ class Person{
 
     }
 
-    public function surname(): string{
+    public function surname(): ?string{
         return $this->surname;
     }
 }
 
 $person = new Person( 'Janis', 'Ivars', 'Stals');
 
-$person2 = new Person('Ilze', '', 'Bieza');
+$person2 = new Person('Ilze', null, 'Bieza');
 var_dump($person, $person2);
 
 
