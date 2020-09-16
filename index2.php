@@ -2,19 +2,21 @@
 
 class car
 {
-public string $model;
-public int $gasTank;
+    public string $model;
+    public int $gasTank;
 
-public function __construct(string $model, int $gasTank)
-{
-    $this->model = $model;
-    $this->gasTank = $gasTank;
-}
-    public function model():string
+    public function __construct(string $model, int $gasTank)
+    {
+        $this->model = $model;
+        $this->gasTank = $gasTank;
+    }
+
+    public function model(): string
     {
         return $this->model;
     }
-    public function gasTank():string
+
+    public function gasTank(): string
     {
         return $this->gasTank;
     }
@@ -30,24 +32,28 @@ class Tesla extends car
 
     }
 }
+
 class Audi extends car
 {
-    public string $color;
-    public function __construct(string $model, int $gasTank, string $color)
-    {
-        parent::__construct($model, $gasTank);
-        $this->color = $color;
 
-}}
-
+    public function AudiSeats(): string {
+        return "leather seats";
+    }
+//
+}
 
 
 $CARS = [
-    new Audi('Q7', 100, 'green'),
+    new Audi('Q7', 100),
     new Tesla('model3', 0)
 
 ];
-foreach ($CARS as $CART){
+foreach ($CARS as $CART) {
 
-    echo $CART -> model() . " has gas tank of " . $CART->gasTank() . PHP_EOL;
+    echo $CART->model() . " has gas tank of " . $CART->gasTank();
+    if ($CART instanceof Audi)
+    {
+        echo $CART ->AudiSeats();
+    }
+    echo PHP_EOL;
 }
