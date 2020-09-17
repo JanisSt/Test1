@@ -1,32 +1,38 @@
 <?php declare(strict_types=1);
 
-class Person{
+class Person
+{
     protected string $name;
     protected string $surname;
     protected ?string  $midlname;
 
 
-    public function __construct(string $name , string $midlname = null, string $surname)
+    public function __construct(string $name, string $midlname = null, string $surname)
     {
-        $this ->name = $name;
-        $this -> midlname=$midlname;
-        $this ->surname=$surname;
+        $this->name = $name;
+        $this->midlname = $midlname;
+        $this->surname = $surname;
 
     }
 
-    public function surname(): string{
+    public function surname(): string
+    {
         return $this->surname;
 
     }
-    public function name(): ?string{
+
+    public function name(): ?string
+    {
         return $this->name;
     }
-    public function midlname(): ?string{
+
+    public function midlname(): ?string
+    {
         return $this->midlname;
     }
 }
 
-$person = new Person( 'Janis', 'Ivars', 'Stals');
+$person = new Person('Janis', 'Ivars', 'Stals');
 
 $person2 = new Person('Ilze', null, 'Bieza');
 

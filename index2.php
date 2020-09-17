@@ -36,7 +36,8 @@ class Tesla extends car
 class Audi extends car
 {
 
-    public function AudiSeats(): string {
+    public function AudiSeats(): string
+    {
         return "leather seats";
     }
 //
@@ -51,9 +52,8 @@ $CARS = [
 foreach ($CARS as $CART) {
 
     echo $CART->model() . " has gas tank of " . $CART->gasTank();
-    if ($CART instanceof Audi)
-    {
-        echo $CART ->AudiSeats();
+    if ($CART instanceof Audi) {
+        echo $CART->AudiSeats();
     }
     echo PHP_EOL;
 }
